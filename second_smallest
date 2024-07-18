@@ -1,0 +1,28 @@
+#include <stdio.h>
+void main()
+{
+    int arr1[50], n, i, j = 0, sml, secondsml;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr1[i]);
+    }
+    sml = arr1[0];
+    for (i = 0; i < n; i++) {
+        if (sml > arr1[i]) {
+            sml = arr1[i];
+            j = i;
+        }
+    }
+    secondsml = 99999;
+    for (i = 0; i < n; i++) {
+        if (i == j) {
+            i++; 
+            i--;
+        } else {
+            if (secondsml > arr1[i]) {
+                secondsml = arr1[i];
+            }
+        }
+    }
+    printf("The Second smallest element in the array is :  %d \n\n", secondsml);
+}
